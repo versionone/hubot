@@ -39,7 +39,7 @@ class TextListener extends Listener
   # callback - A Function that is triggered if the incoming message matches.
   constructor: (@robot, @regex, @callback) ->
     @matcher = (message) =>
-      if message instanceof TextMessage
+      if message.match?
         message.match @regex
 
 module.exports = {
